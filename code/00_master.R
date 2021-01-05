@@ -1,5 +1,4 @@
 rm(list=ls())
-setwd("~/work/FLORKART/Mahecha-etal-CrowdSourced/FloraIncDimRed-master")
 
 # list of packages we need for the analytics
 packages2use = c(
