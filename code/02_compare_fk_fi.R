@@ -131,6 +131,8 @@ jacdata = merge(zensus, jacdata)
 # turn it into English :-)
 jacdata = rename(jacdata, Population = Bevoelkerungszahl)
 
+save(jacdata, file = "resu/jacdata.RData")
+
 # we have selected a priori which geo locations to show  using
 # plot(log10(x), log10(y), bty="l")
 # identify(log10(x), log10(y),1)
