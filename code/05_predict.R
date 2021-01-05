@@ -309,7 +309,7 @@ f = function(d, i){
 }
 
 mod2par <- function() {
-  cl   = makeForkCluster(5*2*2)
+  cl   = makeForkCluster(n_nodes)
   res  = parLapplyLB(cl, seq_along(model_params), function(x) do.call(f, model_params[[x]]))
   stopCluster(cl)
   return(res)
