@@ -103,6 +103,8 @@ if (sum(clim_dat$mtbschnitt_id == idx_mtb) == length(idx_mtb)) {
   soil_dat = dplyr::select(soil_dat, -mtbschnitt_id)
 }
 
+clim_soil <- cbind(clim_dat, soil_dat)
+
 ## reducing the number of variables for the climate and soil system to 5 each
 clim_pca  = PCA(clim_dat, scale.unit = TRUE, ncp = 4, graph = FALSE)
 soil_pca  = PCA(soil_dat, scale.unit = TRUE, ncp = 4, graph = FALSE)
@@ -124,10 +126,10 @@ fviz_eig(soil_pca, addlabels = TRUE, ylim = c(0, 50), barfill = "darkcyan", barc
 dev.off()
 
 # just checking
-fviz_eig(clim_soil, addlabels = TRUE, ylim = c(0, 50), barfill = "darkcyan", barcolor = "darkcyan", cex = 1.5) +
-  theme(text = element_text(size = 16),
-        axis.title = element_text(size = 16),
-        axis.text = element_text(size = 12))
+# fviz_eig(clim_soil, addlabels = TRUE, ylim = c(0, 50), barfill = "darkcyan", barcolor = "darkcyan", cex = 1.5) +
+#   theme(text = element_text(size = 16),
+#         axis.title = element_text(size = 16),
+#         axis.text = element_text(size = 12))
 
 fviz_pca_var(clim_pca, col.var="contrib",
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
