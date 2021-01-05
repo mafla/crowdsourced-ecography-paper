@@ -527,7 +527,7 @@ for (i in 1:length(models_spcv_all_joint)) {
 
 round(pred_R2/10, 2)
 
-0.49, 0.51, 0.38, 0.41
+#0.49, 0.51, 0.38, 0.41
 
 res_mat = array(0, c(9, 5))
 rownames(res_mat) = c("PC_clim1", "PC_clim2", "PC_clim3", "PC_clim4",
